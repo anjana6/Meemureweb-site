@@ -15,9 +15,9 @@
             </div>
             <div class="nev">
             	<ul>
-                	<li><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About Meemure</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
+                	<li><a href="home.php">Home</a></li>
+                    <li><a href="about.php">About Meemure</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
                 </ul>
             </div>
     	</div>
@@ -26,18 +26,19 @@
             	<p>Request tour prices.Availabilty.booking instruction or ask us a question</p>
             </div>
         	<div class="form">
-            	<form action="">
+            	<form action="contactus.php" method="post">
                 	<fieldset>
                     <legend>Personal information</legend>
                 	<span>Title:</span>
                     <input type="radio" name="gender" value="male">Male
-                    <input type="radio" name="gender" vlaue="femail">Femail<br>
+                    <input type="radio" name="gender" value="femail">Femail<br>
                 	Name:<br>
                     <input type="text" name="name" ><br>
                     Email:<br>
                     <input type="gmail" name="gmail"><br>
                     Message:<br>
-                    <textarea name="Message" id="" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="" cols="30" rows="10"></textarea><br>
+                    <input type="submit" name="submit" value="Send Message">
                     </fieldset>
                 </form>
             </div>
@@ -45,3 +46,23 @@
     </div>
 </body>
 </html>
+
+ <?php
+$con = mysqli_connect("localhost","root","","meemure");
+	if(isset($_POST['submit'])){
+		$gender = $_POST['gender'];
+		$name = $_POST['name'];
+		$gmail = $_POST['gmail'];
+        $message = $_POST['message'];
+        
+		
+		$insert_details =  "insert into details(Name,Gmail,Gender,Message) values('$name','$gmail','$gender','$message')";
+		
+        mysqli_query($con,$insert_details);    
+    }
+
+		
+	
+?> 
+
+

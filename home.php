@@ -19,9 +19,9 @@
             
             <div class="nevbar">
                 <ul id="nev">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About Meemure</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="about.php">About Meemure</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
                 </ul>
             </div>
         </div>
